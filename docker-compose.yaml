@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  app:
+    restart: "no"
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./app:/app
