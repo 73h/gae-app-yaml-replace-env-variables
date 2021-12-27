@@ -1,5 +1,5 @@
-name: "GAE ENV Replace"
-description: "Replace environment-variables in googles app engines test-app.yaml file"
+name: "Replace secrets for Googles App Engine Deployment"
+description: "If you are using Googles App Engine and want to use secrets in the `app.yaml` file, you can store them as Secrets in your repository and have them replaced during deployment."
 author: "Heiko Schmidt"
 branding:
   icon: "cloud"
