@@ -1,3 +1,4 @@
-FROM python:3.9-buster
+FROM python:3.9-alpine
 COPY ./app /app
-CMD [ "python", "/app/main.py"]
+CMD ["/app/main.py"]
+ENTRYPOINT ["python"]
