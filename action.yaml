@@ -11,5 +11,3 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  args:
-    - inputs.app_yaml_path
