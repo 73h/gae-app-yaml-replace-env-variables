@@ -8,5 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: 73h/gae-app-yaml-replace-env-variables@main
+        env:
+          VAR_ONE: "VAR_ONE_REPLACE"
+          VAR_TWO: "VAR_TWO_REPLACE"
+          ANOTHER_VAR: "ANOTHER_VAR_REPLACE"
         with:
           app_yaml_path: "test-app.yaml"
