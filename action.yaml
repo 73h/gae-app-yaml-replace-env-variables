@@ -5,9 +5,12 @@ branding:
   icon: "cloud"
   color: "orange"
 inputs:
-  app_yaml_path:
+  app-yaml-path:
+    description: "path to app.yaml file"
     required: false
     default: "test-app.yaml"
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - ${{ inputs.app-yaml-path }}
