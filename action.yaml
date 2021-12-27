@@ -1,0 +1,7 @@
+name: "GAE ENV Replace"
+description: "Replace environment-variables in googles app engines test-app.yaml file"
+author: "Heiko Schmidt"
+inputs:
+  app_yaml_path:
+    required: false
+    default: "./test-app.yaml"

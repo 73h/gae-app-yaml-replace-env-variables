@@ -142,4 +142,3 @@ cython_debug/
 .idea/
 
 gae-app-yaml-replace-env-variables.iml
-app.yaml
