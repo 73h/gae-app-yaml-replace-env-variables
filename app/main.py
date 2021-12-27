@@ -24,7 +24,7 @@ def replace_env_variables_in_app_yaml_file():
         if env_var.startswith("$"):
             repl_env_var = os.environ.get(env_var[1:])
             if repl_env_var is not None:
-                content["env_variables"][key] = repl_env_var
+                content["env_variables"][key] = f'"{repl_env_var}"'
             else:
                 raise Exception(f"cannot find the env-variable {key} in \"env\" section in github action workflow")
         pass
