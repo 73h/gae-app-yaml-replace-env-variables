@@ -5,8 +5,6 @@ jobs:
     name: Test
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    permissions:
-      contents: 'read'
     steps:
       - uses: actions/checkout@v2
       - run: perl -pi -e 's/_MONGO_CONNECTION_STRING_/$ENV{MONGO_CONNECTION_STRING}/' app.yaml
