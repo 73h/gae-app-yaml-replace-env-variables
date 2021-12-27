@@ -2,11 +2,13 @@ import os
 
 if __name__ == "__main__":
 
-    files = os.listdir('/github/workspace/')
-    for f in files:
-        print(f)
+    print("start")
 
-    print('##########')
+    files = os.listdir('/github/workspace')
+    for f in files:
+        print(str(f))
+
+    print("##########")
 
     # yaml_file_path = "/github/workspace/" + os.environ.get("app_yaml_path")
     # print(yaml_file_path)

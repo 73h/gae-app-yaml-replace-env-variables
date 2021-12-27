@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: '73h/gae-app-yaml-replace-env-variables@0b980abd7e07c18349387c6bc666c84813851c7e'
+      - uses: 73h/gae-app-yaml-replace-env-variables@main
         with:
-          app_yaml_path: 'test-app.yaml'
+          app_yaml_path: test-app.yaml
