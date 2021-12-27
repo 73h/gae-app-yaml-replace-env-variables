@@ -2,9 +2,9 @@ import os
 
 if __name__ == "__main__":
 
-    print("start")
+    print(os.environ.get("GITHUB_WORKSPACE"))
 
-    files = os.listdir('/github/workspace')
+    files = os.listdir('.')
     for f in files:
         print(str(f))
 

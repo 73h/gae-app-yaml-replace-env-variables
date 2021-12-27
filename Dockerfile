@@ -1,4 +1,3 @@
-FROM python:3.9-alpine
+FROM python:3.9-buster
 COPY ./app /app
-WORKDIR app
-CMD [ "python", "main.py"]
+CMD [ "python", "/app/main.py"]
