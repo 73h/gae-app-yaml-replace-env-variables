@@ -19,7 +19,6 @@ automatic_scaling:
 env_variables:
   SECRET_ONE: $SECRET_ONE
   SECRET_TWO: $ANOTHER_SECRET
-  FAILED_TEST: $ABC
   ANOTHER_PARAM: "73"
 handlers:
   - url: /.*

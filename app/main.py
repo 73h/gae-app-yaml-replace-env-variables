@@ -24,7 +24,7 @@ def replace_env_variables_in_app_yaml_file():
             if repl_env_var is not None:
                 yaml_data["env_variables"][key] = repl_env_var
             else:
-                raise Exception(f"cannot find the env-variable {key} in \"env\" section in github action workflow")
+                raise Exception(f"cannot find the env-variable {key} in \"env\" section in github workflow")
         pass
 
     with open(yaml_file, "w") as stream:
