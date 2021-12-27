@@ -8,7 +8,7 @@ inputs:
   app-yaml-path:
     description: "path to app.yaml file"
     required: false
-    default: "test-app.yaml"
+    default: "app.yaml"
 runs:
   using: "docker"
   image: "Dockerfile"
