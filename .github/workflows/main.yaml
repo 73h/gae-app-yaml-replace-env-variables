@@ -1,16 +1,16 @@
 on: push
-name: Test
+name: Test-Workflow
 jobs:
   test:
-    name: Test
+    name: Test-Job
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: 73h/gae-app-yaml-replace-env-variables@main
         env:
-          VAR_ONE: "VAR ONE REPLACE"
-          VAR_TWO: "VAR TWO REPLACE"
-          ANOTHER_VAR: "ANOTHER VAR REPLACE xxx"
+          VAR_ONE: "secret one"
+          VAR_TWO: "secret two"
+          ANOTHER_VAR: "another secret"
         with:
           app_yaml_path: "test-app.yaml"

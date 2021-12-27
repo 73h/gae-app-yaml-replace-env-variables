@@ -7,15 +7,13 @@ def replace_env_variables_in_app_yaml_file():
     github_workspace = os.environ.get("GITHUB_WORKSPACE")
     app_yaml_path = os.environ.get("INPUT_APP_YAML_PATH")
 
-    yaml_file_path = os.path.join(github_workspace, app_yaml_path)
+    yaml_file = os.path.join(github_workspace, app_yaml_path)
 
-    print(f"open and read {yaml_file_path}")
-    yaml_file = open(yaml_file_path, "r")
-    content = yaml.full_load(yaml_file.read())
-    yaml_file.close()
+    with open(yaml_file, "r") as stream:
+        yaml_data = yaml.safe_load(stream)
 
-    if "env_variables" in content:
-        env_variables = content["env_variables"]
+    if "env_variables" in yaml_data:
+        env_variables = yaml_data["env_variables"]
     else:
         raise Exception("cannot find the \"env_variables\" section in yaml-file")
 
@@ -24,18 +22,17 @@ def replace_env_variables_in_app_yaml_file():
         if env_var.startswith("$"):
             repl_env_var = os.environ.get(env_var[1:])
             if repl_env_var is not None:
-                content["env_variables"][key] = repl_env_var
+                yaml_data["env_variables"][key] = repl_env_var
             else:
                 raise Exception(f"cannot find the env-variable {key} in \"env\" section in github action workflow")
         pass
 
-    yaml_file = open(yaml_file_path, "w")
-    yaml.dump(content, yaml_file)
-    yaml_file.close()
+    with open(yaml_file, "w") as stream:
+        yaml.dump(yaml_data, stream)
 
-    test = open(yaml_file_path, "r")
-    print(test.read())
-    yaml_file.close()
+    # test
+    with open(yaml_file, "r") as stream:
+        print(yaml.safe_load(stream))
 
 
 if __name__ == "__main__":
