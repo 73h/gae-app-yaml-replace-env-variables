@@ -1,6 +1,9 @@
 name: "GAE ENV Replace"
 description: "Replace environment-variables in googles app engines test-app.yaml file"
 author: "Heiko Schmidt"
+branding:
+  icon: "cloud"
+  color: "orange"
 inputs:
   app_yaml_path:
     required: false
@@ -8,8 +11,5 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-branding:
-  icon: "cloud"
-  color: "orange"
   args:
     - ${{ inputs.app_yaml_path }}
