@@ -1,4 +1,4 @@
-FROM python:3.9-buster
+FROM python:3.9-alpine
 
 LABEL maintainer="Heiko Schmidt <heiko@73h.de>"
 
