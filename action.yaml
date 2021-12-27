@@ -6,8 +6,10 @@ inputs:
     required: false
     default: "./test-app.yaml"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
 branding:
-  icon: 'cloud'
-  color: 'orange'
+  icon: "cloud"
+  color: "orange"
+  args:
+    - ${{ inputs.app_yaml_path }}
