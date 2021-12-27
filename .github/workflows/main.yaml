@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: perl -pi -e 's/_MONGO_CONNECTION_STRING_/$ENV{MONGO_CONNECTION_STRING}/' app.yaml
-      - uses: '73h/gae-app-yaml-replace-env-variables'
+      - uses: 'https://github.com/73h/gae-app-yaml-replace-env-variables'
         with:
           app_yaml_path: './app.yaml'
