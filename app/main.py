@@ -30,10 +30,6 @@ def replace_env_variables_in_app_yaml_file():
     with open(yaml_file, "w") as stream:
         yaml.dump(yaml_data, stream)
 
-    # test
-    with open(yaml_file, "r") as stream:
-        print(yaml.safe_load(stream))
-
 
 if __name__ == "__main__":
     replace_env_variables_in_app_yaml_file()
