@@ -9,8 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: 73h/gae-app-yaml-replace-env-variables@main
         env:
-          VAR_ONE: "secret one"
-          VAR_TWO: "secret two"
-          ANOTHER_VAR: "another secret"
+          SECRET_ONE: ${{ secrets.SECRET_ONE }}
+          ANOTHER_SECRET: ${{ secrets.ANOTHER_SECRET }}
         with:
           app_yaml_path: "test-app.yaml"

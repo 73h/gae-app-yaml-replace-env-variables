@@ -17,10 +17,10 @@ entrypoint: gunicorn -b :$PORT main:app --chdir app
 automatic_scaling:
   max_instances: 1
 env_variables:
-  VAR_ONE: $VAR_ONE
-  VAR_TWO: $VAR_TWO
-  VAR_THREE: "not replace"
-  VAR_FOUR: $ANOTHER_VAR
+  SECRET_ONE: $SECRET_ONE
+  SECRET_TWO: $ANOTHER_SECRET
+  FAILED_TEST: $ABC
+  ANOTHER_PARAM: "73"
 handlers:
   - url: /.*
     script: auto
