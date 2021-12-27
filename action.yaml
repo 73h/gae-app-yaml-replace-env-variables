@@ -1,5 +1,5 @@
-name: "Replace secrets for Googles App Engine Deployment"
-description: "If you are using Googles App Engine and want to use secrets in the `app.yaml` file, you can store them as Secrets in your repository and have them replaced during deployment."
+name: "Replace secrets in Googles App Engine Deployment File"
+description: "Replace protectable environment variables in app.yaml file when deploying an application to Google's App Engine."
 author: "Heiko Schmidt"
 branding:
   icon: "cloud"
