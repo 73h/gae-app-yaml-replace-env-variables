@@ -7,9 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: 73h/gae-app-yaml-replace-env-variables@main
+      - uses: 73h/gae-app-yaml-replace-env-variables@v0.1
         env:
-          SECRET_ONE: ${{ secrets.SECRET_ONE }}
-          ANOTHER_SECRET: ${{ secrets.ANOTHER_SECRET }}
+          HOST: ${{ secrets.HOST }}
         with:
-          app_yaml_path: "test-app.yaml"
+          app_yaml_path: 'gcp-staging.yaml'
