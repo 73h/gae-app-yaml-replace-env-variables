@@ -3,12 +3,13 @@ name: Test-Workflow
 jobs:
   test:
     name: Test-Job
-    if: github.ref == 'refs/heads/1-cannot-find-the-env-variable-host-in-env-section-in-github-action-workflow'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: 73h/gae-app-yaml-replace-env-variables@v0.1
+      - uses: 73h/gae-app-yaml-replace-env-variables@main
         env:
-          HOST: ${{ secrets.HOST }}
+          SECRET_ONE: ${{ secrets.SECRET_ONE }}
+          ANOTHER_SECRET: ${{ secrets.ANOTHER_SECRET }}
         with:
-          app_yaml_path: 'gcp-staging.yaml'
+          app_yaml_path: "test-app.yaml"
