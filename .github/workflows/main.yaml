@@ -3,7 +3,7 @@ name: Test-Workflow
 jobs:
   test:
     name: Test-Job
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/1-cannot-find-the-env-variable-host-in-env-section-in-github-action-workflow'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
