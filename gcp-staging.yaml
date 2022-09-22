@@ -16,4 +16,4 @@ handlers:
     secure: always
 
 env_variables:
-  HOST: $SECRET_HOST
+  HOST: $HOST
