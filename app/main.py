@@ -25,7 +25,7 @@ def replace_env_variables_in_app_yaml_file():
                 raise Exception(f"cannot find the env-variable {env_var[1:]} in \"env\" section in github workflow")
 
     with open(yaml_file, "w") as stream:
-        yaml.dump(yaml_data, stream, width=float("inf"), default_style='"')
+        yaml.dump(yaml_data, stream, width=float("inf"))
 
 
 if __name__ == "__main__":
