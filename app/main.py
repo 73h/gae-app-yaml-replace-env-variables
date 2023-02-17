@@ -17,7 +17,7 @@ def replace_env_variables_in_app_yaml_file():
 
     for key in yaml_data["env_variables"]:
         env_var = yaml_data["env_variables"][key]
-        if env_var.startswith("$"):
+        if type(env_var) is str and env_var.startswith("$"):
             repl_env_var = os.environ.get(env_var[1:])
             if repl_env_var is not None:
                 yaml_data["env_variables"][key] = repl_env_var
