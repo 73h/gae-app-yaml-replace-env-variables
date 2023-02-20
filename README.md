@@ -15,7 +15,7 @@ Place the following in your `/.github/workflows/main.yml` behind `actions/checko
 ...
 steps:
   - uses: actions/checkout@v2
-  - uses: 73h/gae-app-yaml-replace-env-variables@v0.1
+  - uses: 73h/gae-app-yaml-replace-env-variables@v0.3
     env:
       SECRET_ONE: ${{ secrets.SECRET_ONE }}
       ANOTHER_SECRET: ${{ secrets.ANOTHER_SECRET }}
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: 73h/gae-app-yaml-replace-env-variables@v0.1
+      - uses: 73h/gae-app-yaml-replace-env-variables@v0.3
         env:
           SECRET_ONE: ${{ secrets.SECRET_ONE }}
           SECRET_TWO: ${{ secrets.SECRET_TWO }}
